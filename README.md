@@ -37,7 +37,7 @@ Comunicação entre serviços
 - Docker instalado (instalar Docker)
 - Docker Compose v2+
 2. Clone o repositório
-git clone https://github.com/seu-usuario/guess_game.git
+git clone https://github.com/andersonhrosa/guess_game.git
 cd guess_game
 
 
