@@ -1,8 +1,14 @@
-FROM node:18.17.0 AS build
+FROM node:18.17.0
 
 WORKDIR /app
-COPY . .
-RUN npm install && npm run build
 
-FROM nginx:latest
-COPY --from=build /app/build /usr/share/nginx/html
+COPY . .
+
+RUN corepack enable
+RUN npm install
+
+ENV REACT_APP_BACKEND_URL=http://backend:5000
+EXPOSE 3000
+
+CMD ["npm", "start"]
+

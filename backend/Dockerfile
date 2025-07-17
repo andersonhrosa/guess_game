@@ -1,9 +1,18 @@
-FROM python:3.11-slim
+FROM python:3.8-slim
 
 WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
+
+RUN chmod +x start-backend.sh
+
+RUN sed -i 's/\r$//' start-backend.sh
+
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+
 ENV FLASK_APP=run.py
-CMD ["flask", "run", "--host=0.0.0.0"]
+EXPOSE 5000
+
+ENTRYPOINT ["./start-backend.sh"]
+
