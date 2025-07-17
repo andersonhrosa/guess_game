@@ -50,8 +50,7 @@ docker compose up --build
 O primeiro build pode demorar alguns minutos.
 
 5. Acesse a aplicação
-- Interface do jogo (frontend): http://localhost:3000
-- API Flask: http://localhost:3000/api/
+- Interface do jogo (frontend): http://172.19.0.4:3000
 
 🔄 Atualização dos Componentes
 A estrutura foi pensada para permitir atualizações individuais.
